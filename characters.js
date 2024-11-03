@@ -30,6 +30,7 @@ export const getCharacters = async (element) =>
 
 const displayCharacters = (characters, element) =>
 {
+    element.innerHTML="";
     const charactersContainer = document.createElement('div');
     charactersContainer.id = 'characters';
     element.appendChild(charactersContainer);
