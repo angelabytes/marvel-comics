@@ -162,28 +162,49 @@ nav {
 
 
 /* comics */
-
 #comics{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 0.2fr);
   gap: 2rem;
   padding: 1rem;
   max-width: 1400px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 #comics .card {
-  /* padding: 0.6em 0.4em;
   height: 20rem;
-  background-color: rgb(22, 29, 43, 0.7);
-  box-shadow: 3px 7px 13px rgba(14, 14, 14, 0.342);
-  border-radius: 0.2rem;
-  backdrop-filter: blur(12px); */
-  /* will-change: transform;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; */
-  height: 24rem;
-  background-color: rgba(43, 22, 29, 0.8);
-  
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  flex-wrap: wrap;
+  /* background-color: rgba(92, 38, 17, 0.8); */
+  background-color: rgba(68, 61, 51, 0.8);
+  position: relative;
+ 
+}
+#comics h3  {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 1rem 0;
+}
+
+#comics p {
+  align-self: flex-start;
+  margin-left: 1rem;
+}
+
+#comics img {
+  width: 15rem;
+  height: auto;
+  align-self: flex-start;
+}
+
+#comics .card:hover {
+   background-color: rgba(92, 38, 17, 0.8);
 }
 
 @media (max-width: 1200px) {

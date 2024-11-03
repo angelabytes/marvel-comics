@@ -38,17 +38,21 @@ const displayComicBooks = (comics, element) =>
     comics.forEach(comic => 
     {
         const priceInfo = comic.prices.length > 0 ? comic.prices[0] : {price: "N/A"};
-        const comicPrice = priceInfo.price ? `$${priceInfo.price}`: "Price is not available";
+        const comicPrice = priceInfo.price ? `$${priceInfo.price}`: "N/A";
+        const comicUPC = comic.upc ? `${comic.upc}`: "N/A";
+        comic.dates.forEach
 
         const comicElement = document.createElement('div');
         comicElement.classList.add('card');
         comicElement.innerHTML = 
         `
-          <img src="${comic.thumbnail.path}/standard_fantastic.${comic.thumbnail.extension}" alt="comic_image"/>
+          <img src="${comic.thumbnail.path}/standard_xlarge.${comic.thumbnail.extension}" alt="comic_image"/> 
           <h3>${comic.title}</h3>
-          <p class="price">${comicPrice}</p>
+          <p class="price">Price: ${comicPrice}</p>
+          <p class="upc"> UPC: ${comicUPC}</p>
+          <p class="issue-num">Issue #${comic.issueNumber}</p>
         `;
-        element.appendChild(comicElement);
+        comicsContainer.appendChild(comicElement);
     });
 };
 
