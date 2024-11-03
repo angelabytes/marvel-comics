@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Karma:wght@300;400;500;600;700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  font-family: "Bangers", system-ui;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #181818;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* layout */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+p{
+  font-family: "Unna", serif ;
+}
+
+body {
+  display: grid;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main{
+  position: relative;
+  width: 100%;
+  flex: 1;
+  z-index: 1;
+}
+
+.background {
+  position: fixed;
+  top: 3em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-image: url(spiderman-7786392_1280.jpg);
+  background-color: rgba(24, 24, 24, 0.6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  opacity: 0.8;
+  filter: blur(4px);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 40em;
+  z-index: 3;
+  margin-left: -1.5rem;
+}
+
+.hero-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(251,188,84, 0.2); 
+  filter: blur(3px);
+  z-index: 2;
+}
+
+#hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+}
+
+nav {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(24, 24, 24, 0.4);
+  z-index: 10;
+  justify-content: center;
+}
+
+.nav-link{
+  text-decoration: none;
+  align-content: center;
+  padding: 0 0.6rem;
+  margin-right: 2rem;
+  color: rgb(251,188,84);
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+#logo {
+  position: absolute;
+  top: 150px;
+  left: 80px;
+  z-index: 3;
+  image-rendering: crisp-edges;
+  height: 9rem;
+}
+
+
+#content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card h3 {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 10px 20px rgba(14, 14, 14, 0.5);
+}
+
+
+/* characters */
+
+#characters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#characters .card {
+  padding: 0.6em 0.4em;
+  height: 20rem;
+  background-color: rgb(22, 29, 43, 0.7);
+  box-shadow: 3px 7px 13px rgba(14, 14, 14, 0.342);
+  border-radius: 0.2rem;
+  backdrop-filter: blur(12px);
+  will-change: transform;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+
+/* comics */
+
+#comics{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#comics .card {
+  /* padding: 0.6em 0.4em;
+  height: 20rem;
+  background-color: rgb(22, 29, 43, 0.7);
+  box-shadow: 3px 7px 13px rgba(14, 14, 14, 0.342);
+  border-radius: 0.2rem;
+  backdrop-filter: blur(12px); */
+  /* will-change: transform;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; */
+  height: 24rem;
+  background-color: rgba(43, 22, 29, 0.8);
+  
+}
+
+@media (max-width: 1200px) {
+  #characters{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #logo{
+    left: 25%;
+    transform: translateX(-25%);
+  }
+}
+
+@media (max-width: 900px) {
+  #characters{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #logo{
+    left: 50%;
+    transform: translateX(-50%);
+    height: 7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #characters{
+    grid-template-columns: 1fr;
+  }
+  #logo{
+    left: 25%;
+    transform: translateX(-25%);
+    height: 6rem;
+  }
+}
+
